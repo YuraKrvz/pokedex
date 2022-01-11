@@ -4,7 +4,7 @@ import {Header, MainFeed} from './MaterialUiComponents';
 export default function PageHome() {
    return (
       <div>
-         <Header/>
+         <Header />
          <MainFeed />
       </div>
    )

@@ -1,11 +1,11 @@
 import React from 'react'
-import {Header, MainFeed} from './MaterialUiComponents';
+import Header from './Header';
 
 export default function PageHome() {
    return (
       <div>
-         <Header/>
-         <MainFeed />
+         <Header />
+         
       </div>
    )
 }
