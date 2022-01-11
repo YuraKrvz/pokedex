@@ -3,8 +3,6 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import PageHome from './components/PageHome';
-import PagePokemon from './components/PagePokemon';
 
 function App() {
   return (
