@@ -5,7 +5,6 @@ export default function PageHome() {
    return (
       <div>
          home page
-         <Button variant="contained">Hello World</Button>;
       </div>
    )
 }
