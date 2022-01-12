@@ -5,12 +5,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {colors} from '../config';
-//
-
 
 export default function MediaCard({name, url}) {
    const [pokemon, setPokemon] = React.useState(null);
-
+   const stat = React.useContext();
    React.useEffect(()=>{
       fetch(url)
       .then(res=>res.json())

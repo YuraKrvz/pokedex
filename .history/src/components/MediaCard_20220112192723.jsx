@@ -6,11 +6,11 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {colors} from '../config';
 //
-
+import { StateContext } from '../state';
 
 export default function MediaCard({name, url}) {
    const [pokemon, setPokemon] = React.useState(null);
-
+   const state = React.useContext(StateContext);
    React.useEffect(()=>{
       fetch(url)
       .then(res=>res.json())
@@ -18,7 +18,7 @@ export default function MediaCard({name, url}) {
          setPokemon(res)
       })
    }, [])
-
+console.log(state)
    return (
       <Link to={`${name}`} >
          <Card sx={{ maxWidth: 245, margin: '10px', backgroundColor: `${pokemon && colors[`${pokemon.types[0].type.name}`]}` }}>

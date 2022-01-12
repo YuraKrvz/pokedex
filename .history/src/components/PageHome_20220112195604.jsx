@@ -17,7 +17,7 @@ export default function PageHome() {
          setNextPage(res.next);
          setPrevPage(res.previous)
          setCurrentPage(res.results)
-         setList(res.results);
+         setList(currentPage);
    }
    const handlerFilterList = () => {
       if(search.length > 1){

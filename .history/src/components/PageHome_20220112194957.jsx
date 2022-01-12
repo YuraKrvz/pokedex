@@ -17,14 +17,10 @@ export default function PageHome() {
          setNextPage(res.next);
          setPrevPage(res.previous)
          setCurrentPage(res.results)
-         setList(res.results);
+        
    }
    const handlerFilterList = () => {
-      if(search.length > 1){
-         setList( list.filter(pok => pok.name.includes(search)) )
-      } else if (search.length < 1){
-         setList(currentPage)
-      }
+      setList(list.filter(pok => pok.name.includes(search)))
    }
 
    useEffect(()=>{

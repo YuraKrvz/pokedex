@@ -77,6 +77,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export function Header({search, setSearch}) {
+  const handler = ()=> {
+
+  }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">

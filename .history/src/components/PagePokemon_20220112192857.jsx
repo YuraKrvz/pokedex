@@ -10,8 +10,12 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+//
+import { StateContext } from '../state';
 
 export default function PagePokemon() {
+   const state = React.useContext(StateContext);
+
    const [pokemon, setPokemon] = React.useState();
    const params = useParams();
    React.useEffect(()=>{
@@ -21,6 +25,7 @@ export default function PagePokemon() {
          setPokemon(res)
       })
    },[]);
+   console.log(state)
    return (
       <>
          <Container>
