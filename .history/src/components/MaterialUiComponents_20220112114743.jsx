@@ -175,8 +175,8 @@ export function Footer({children}) {
 export function FooterBtns({handler}) {
   return (
     <ButtonGroup disableElevation variant="contained ">
-      <Button name="back" onClick={()=> handler('previous')}> <ArrowBackIosNewIcon/> </Button>
-      <Button name="forward" onClick={()=> handler('next')}> <ArrowForwardIosIcon/> </Button>
+      <Button name="back" > <ArrowBackIosNewIcon name="arrow" onClick={(e)=> handler(e)} /> </Button>
+      <Button name="forward" onClick={handler}> <ArrowForwardIosIcon/> </Button>
     </ButtonGroup>
   );
 }

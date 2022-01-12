@@ -158,12 +158,12 @@ export function MainFeed ({children}){
 }
 //FOOTER
 
-export function Footer({children}) {
+export function Footer() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar variant="dense">
-        {children}
+        <FooterBtns />
         </Toolbar>
       </AppBar>
     </Box>
@@ -172,11 +172,12 @@ export function Footer({children}) {
 
 // BTN GROUP
 
-export function FooterBtns({handler}) {
+export function FooterBtns(props) {
+  console.log(props)
   return (
     <ButtonGroup disableElevation variant="contained ">
-      <Button name="back" onClick={()=> handler('previous')}> <ArrowBackIosNewIcon/> </Button>
-      <Button name="forward" onClick={()=> handler('next')}> <ArrowForwardIosIcon/> </Button>
+      <Button name="back" > <ArrowBackIosNewIcon/> </Button>
+      <Button name="forward" > <ArrowForwardIosIcon/> </Button>
     </ButtonGroup>
   );
 }

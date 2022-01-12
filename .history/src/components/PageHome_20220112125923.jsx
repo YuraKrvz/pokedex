@@ -9,20 +9,25 @@ export default function PageHome() {
    const [nextPage, setNextPage] = useState();
    const [prevPage, setPrevPage] = useState();
    const handlerPagination = async (variant) => {
-      const response = await fetch(variant === 'next' ? nextPage : prevPage).catch(console.error)
+      console.log(variant)
+      const response = await fetch(nextPage);
       const res = await response.json();
-         setNextPage(res.next);
-         setPrevPage(res.previous)
-         setCurrentPage(res.results)
+      console.log(res)
+      setCurrentPage(res.results)
+      setNextPage(res[variant])
+      // console.log(nextPage)
    }
 
    useEffect(()=>{
       fetch('https://pokeapi.co/api/v2/pokemon?&limit=21')
       .then(res => res.json())
       .then(res => {
+         console.log(res)
+
          setCurrentPage(res.results);  
          setNextPage(res.next);
          setPrevPage(res.previous);
+
       })
    }, [])
 

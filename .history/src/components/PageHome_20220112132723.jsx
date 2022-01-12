@@ -9,7 +9,7 @@ export default function PageHome() {
    const [nextPage, setNextPage] = useState();
    const [prevPage, setPrevPage] = useState();
    const handlerPagination = async (variant) => {
-      const response = await fetch(variant === 'next' ? nextPage : prevPage).catch(console.error)
+      const response = await fetch(variant === 'next' ? nextPage : prevPage);
       const res = await response.json();
          setNextPage(res.next);
          setPrevPage(res.previous)
@@ -20,9 +20,12 @@ export default function PageHome() {
       fetch('https://pokeapi.co/api/v2/pokemon?&limit=21')
       .then(res => res.json())
       .then(res => {
+         console.log(res)
+
          setCurrentPage(res.results);  
          setNextPage(res.next);
          setPrevPage(res.previous);
+
       })
    }, [])
 

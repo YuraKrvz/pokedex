@@ -20,9 +20,12 @@ export default function PageHome() {
       fetch('https://pokeapi.co/api/v2/pokemon?&limit=21')
       .then(res => res.json())
       .then(res => {
+         console.log(res)
+
          setCurrentPage(res.results);  
          setNextPage(res.next);
          setPrevPage(res.previous);
+
       })
    }, [])
 
