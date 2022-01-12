@@ -24,7 +24,7 @@ export default function PageHome() {
    // console.log(currentPage)
    return (
       <>
-            <Header/>
+         <Header/>
             <Container>
                <Grid sx={{ flexGrow: 1, marginTop: '20px' }} container spacing={2}>
                   <Grid item xs={12}>

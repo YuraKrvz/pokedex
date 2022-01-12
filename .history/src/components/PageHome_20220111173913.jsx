@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {Header, MainFeed} from './MaterialUiComponents';
 import MediaCard from '../components/MediaCard';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
 
 export default function PageHome() {
    const [currentPage, setCurrentPage] = useState();
@@ -24,7 +22,7 @@ export default function PageHome() {
    // console.log(currentPage)
    return (
       <>
-            <Header/>
+         <Header/>
             <Container>
                <Grid sx={{ flexGrow: 1, marginTop: '20px' }} container spacing={2}>
                   <Grid item xs={12}>

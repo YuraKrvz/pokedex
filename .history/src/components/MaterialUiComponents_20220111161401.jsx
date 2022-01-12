@@ -129,14 +129,19 @@ export default function MediaCard() {
 
 // 
 
-export function MainFeed ({children}){
+export function MainFeed (){
 
   return (
     <Container>
       <Grid sx={{ flexGrow: 1, marginTop: '20px' }} container spacing={2}>
         <Grid item xs={12}>
           <Grid container justifyContent="center" spacing={2}>
-            {children}
+            <MediaCard />
+            <MediaCard />
+            <MediaCard />
+            <MediaCard />
+            <MediaCard />
+            <MediaCard />
           </Grid>
         </Grid>
       </Grid>
