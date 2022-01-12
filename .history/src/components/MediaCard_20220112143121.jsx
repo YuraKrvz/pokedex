@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { Link } from "react-router-dom";
 import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 
 export default function MediaCard({name, url}) {
    const [pokemon, setPokemon] = React.useState(null);
@@ -29,11 +31,15 @@ export default function MediaCard({name, url}) {
                   {name}
                </Typography>
                <Typography variant="body2" color="text.secondary">
-                  Abilities: {pokemon && pokemon.abilities.map(a => a.ability.name + ', ')}
-                  <br />
-                  Base experience: {pokemon && pokemon.base_experience}
+               Abilities: {pokemon && pokemon.abilities.map(a => a.ability.name + ', ')}
+               <br />
+               Base experience: {pokemon && pokemon.base_experience}
                </Typography>
             </CardContent>
+            <CardActions>
+               <Button variant="contained" size="small">Share</Button>
+               <Button variant="contained" size="small">Learn More</Button>
+            </CardActions>
          </Card>
       </Link>
    );

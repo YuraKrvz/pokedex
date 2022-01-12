@@ -1,19 +1,21 @@
-import * as React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import {useState, useEffect} from 'react';
+import { useParams } from 'react-router-dom';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 //
+import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+//
 
 export default function PagePokemon() {
-   const [pokemon, setPokemon] = React.useState();
+   const [pokemon, setPokemon] = useState();
    const params = useParams();
-   React.useEffect(()=>{
+   useEffect(()=>{
       fetch(`https://pokeapi.co/api/v2/pokemon/${params.pokemon}`)
       .then(res=> res.json())
       .then(res => {
@@ -39,14 +41,13 @@ export default function PagePokemon() {
                               {pokemon && pokemon.name}
                            </Typography>
                            <Typography variant="body2" color="text.secondary">
-                              Abilities: {pokemon && pokemon.abilities.map(a => a.ability.name + ', ')}
-                              Base experience: {pokemon && pokemon.base_experience}
+                              Lizards are a widespread group of squamate reptiles, with over 6,000
+                              species, ranging across all continents except Antarctica
                            </Typography>
                         </CardContent>
                         <CardActions>
-                           <Link to="/"> 
-                              <Button size="small"> Back </Button> 
-                           </Link>
+                           <Button size="small">Share</Button>
+                           <Button size="small">Learn More</Button>
                         </CardActions>
                      </Card>
                   </Grid>
