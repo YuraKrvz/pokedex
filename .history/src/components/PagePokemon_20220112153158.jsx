@@ -21,7 +21,6 @@ export default function PagePokemon() {
          setPokemon(res)
       })
    },[]);
-
    return (
       <>
          <Container>
@@ -57,3 +56,7 @@ export default function PagePokemon() {
       </>
    )
 }
+
+
+// {pokemon && currentPage.map(item => <MediaCard key={item.name} name={item.name} url={item.url} />)}
+

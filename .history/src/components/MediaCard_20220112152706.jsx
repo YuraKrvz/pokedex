@@ -4,7 +4,21 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import {colors} from '../config';
+//
+const styles = {
+   grass: '#b2dfdb',
+   fire: '#ffccbc',
+   water: '#b3e5fc',
+   bug: '#bcaaa4',
+   normal: '#e0e0e0',
+   poison: '#e91e63',
+   electric: '#f0f4c3',
+   ground: '#795548',
+   psychic: '#b0bec5',
+   fairy: '#ffd180',
+   fighting: '#ccff90',
+
+}
 
 export default function MediaCard({name, url}) {
    const [pokemon, setPokemon] = React.useState(null);
@@ -18,7 +32,7 @@ export default function MediaCard({name, url}) {
   //${pokemon && styles[`pokemon.types[0].type.name}`]
    return (
       <Link to={`${name}`} >
-         <Card sx={{ maxWidth: 245, margin: '10px', backgroundColor: `${pokemon && colors[`${pokemon.types[0].type.name}`]}` }}>
+         <Card sx={{ maxWidth: 245, margin: '10px', backgroundColor: `${pokemon && styles[`${pokemon.types[0].type.name}`]}` }}>
             <CardMedia
                component="img"
                height="120"

@@ -18,17 +18,17 @@ export default function PagePokemon() {
       fetch(`https://pokeapi.co/api/v2/pokemon/${params.pokemon}`)
       .then(res=> res.json())
       .then(res => {
+         console.log(res)
          setPokemon(res)
       })
    },[]);
-
    return (
       <>
          <Container>
             <Grid sx={{ flexGrow: 1, marginTop: '20px' }} container spacing={2}>
                <Grid item xs={12}>
                   <Grid container justifyContent="center" spacing={2}>
-                  <Card sx={{ maxWidth: 345, margin: '10px', backgroundColor: `${pokemon && colors[`${pokemon.types[0].type.name}`]}` }}>
+                  <Card sx={{ maxWidth: 345, margin: '10px', backgroundColor: `${pokemon && styles[`${pokemon.types[0].type.name}`]}` }}>
                         <CardMedia
                            component="img"
                            height="140"
@@ -57,3 +57,7 @@ export default function PagePokemon() {
       </>
    )
 }
+
+
+// {pokemon && currentPage.map(item => <MediaCard key={item.name} name={item.name} url={item.url} />)}
+

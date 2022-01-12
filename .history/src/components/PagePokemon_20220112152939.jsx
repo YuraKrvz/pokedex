@@ -18,10 +18,10 @@ export default function PagePokemon() {
       fetch(`https://pokeapi.co/api/v2/pokemon/${params.pokemon}`)
       .then(res=> res.json())
       .then(res => {
+         console.log(res)
          setPokemon(res)
       })
    },[]);
-
    return (
       <>
          <Container>
@@ -57,3 +57,7 @@ export default function PagePokemon() {
       </>
    )
 }
+
+
+// {pokemon && currentPage.map(item => <MediaCard key={item.name} name={item.name} url={item.url} />)}
+
