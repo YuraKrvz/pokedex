@@ -28,8 +28,6 @@ import Grid from '@mui/material/Grid';
 // import IconButton from '@mui/material/IconButton';
 // import MenuIcon from '@mui/icons-material/Menu';
 //BTN GROUP
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 // import * as React from 'react';
 import ButtonGroup from '@mui/material/ButtonGroup';
 // import Button from '@mui/material/Button';
@@ -175,8 +173,8 @@ export function Footer() {
 export function FooterBtns() {
   return (
     <ButtonGroup disableElevation variant="contained ">
-      <Button> <ArrowBackIosNewIcon/> </Button>
-      <Button> <ArrowForwardIosIcon/> </Button>
+      <Button variant="outlined" color="success">One</Button>
+      <Button variant="outlined" color="success">Two</Button>
     </ButtonGroup>
   );
 }

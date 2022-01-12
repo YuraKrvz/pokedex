@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Header, Footer, FooterBtns} from './MaterialUiComponents';
+import {Header, Footer} from './MaterialUiComponents';
 import MediaCard from '../components/MediaCard';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';

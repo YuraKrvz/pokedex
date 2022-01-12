@@ -174,7 +174,7 @@ export function Footer() {
 
 export function FooterBtns() {
   return (
-    <ButtonGroup disableElevation variant="contained ">
+    <ButtonGroup disableElevation variant="contained " >
       <Button> <ArrowBackIosNewIcon/> </Button>
       <Button> <ArrowForwardIosIcon/> </Button>
     </ButtonGroup>

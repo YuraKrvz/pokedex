@@ -28,8 +28,6 @@ import Grid from '@mui/material/Grid';
 // import IconButton from '@mui/material/IconButton';
 // import MenuIcon from '@mui/icons-material/Menu';
 //BTN GROUP
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 // import * as React from 'react';
 import ButtonGroup from '@mui/material/ButtonGroup';
 // import Button from '@mui/material/Button';
@@ -163,7 +161,12 @@ export function Footer() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar variant="dense">
-        <FooterBtns />
+          <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" color="inherit" component="div">
+            Photos
+          </Typography>
         </Toolbar>
       </AppBar>
     </Box>
@@ -174,9 +177,9 @@ export function Footer() {
 
 export function FooterBtns() {
   return (
-    <ButtonGroup disableElevation variant="contained ">
-      <Button> <ArrowBackIosNewIcon/> </Button>
-      <Button> <ArrowForwardIosIcon/> </Button>
+    <ButtonGroup disableElevation variant="contained">
+      <Button>One</Button>
+      <Button>Two</Button>
     </ButtonGroup>
   );
 }

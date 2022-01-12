@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Header, Footer, FooterBtns} from './MaterialUiComponents';
+import {Header, MainFeed} from './MaterialUiComponents';
 import MediaCard from '../components/MediaCard';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -34,9 +34,6 @@ export default function PageHome() {
                   </Grid>
                </Grid>
             </Container>
-            <Footer>
-               <FooterBtns />
-            </Footer> 
       </>
    )
 }

@@ -12,7 +12,7 @@ export default function MediaCard({name, url}) {
       fetch(url)
       .then(res=>res.json())
       .then(res => {
-         // console.log(res)
+         console.log(res)
          setPokemon(res)
       })
    }, [])
@@ -22,17 +22,17 @@ export default function MediaCard({name, url}) {
        <CardMedia
          component="img"
          height="120"
+         //image={pokemon.sprites.version.versions['generation-vi']['omegaruby-alphasapphire']['front_default']}
          image={pokemon && pokemon.sprites['front_default']}
-         alt="pokemon img"
+         alt="green iguana"
        />
        <CardContent>
          <Typography gutterBottom variant="h5" component="div">
             {name}
          </Typography>
          <Typography variant="body2" color="text.secondary">
-         Abilities: {pokemon && pokemon.abilities.map(a => a.ability.name + ', ')}
-         <br />
-         Base experience: {pokemon && pokemon.base_experience}
+           Lizards are a widespread group of squamate reptiles, with over 6,000
+           species, ranging across all continents except Antarctica
          </Typography>
        </CardContent>
        <CardActions>
