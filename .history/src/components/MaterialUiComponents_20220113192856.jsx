@@ -224,15 +224,14 @@ export function BasicSelect({number, setNumber}) {
     setNumber({...number, number: event.target.value});
   };
   return (
-    <Box sx={{ minWidth: 120}} >
-      <FormControl fullWidth sx={{color: 'white'}}>
-        <InputLabel id="demo-simple-select-label" sx={{color: 'white'}}>Number</InputLabel>
+    <Box sx={{ minWidth: 120, color: 'white' }}>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Number</InputLabel>
         <Select
-          sx={{color: 'white', height: '50px'}}
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={number.number}
-          label="1"
+          label="Number"
           onChange={handleChange}
         >
           <MenuItem value={10}>Ten</MenuItem>

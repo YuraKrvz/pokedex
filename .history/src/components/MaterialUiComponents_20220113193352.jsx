@@ -232,7 +232,7 @@ export function BasicSelect({number, setNumber}) {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={number.number}
-          label="1"
+          label="Number"
           onChange={handleChange}
         >
           <MenuItem value={10}>Ten</MenuItem>

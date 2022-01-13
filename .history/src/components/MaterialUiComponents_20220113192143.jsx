@@ -125,7 +125,7 @@ export function MediaCard({name, url}) {
           width: 300, height: '400px', margin: '10px', 
           backgroundColor: `${pokemon && colors[`${pokemon.types[0].type.name}`]}`,
           boxShadow: '10px 5px 5px silver',
-        }} className="hover">
+        }}>
            <CardMedia
               sx={{backgroundPosition: 'center', backgroundSize: 'cover', height: '250px'}}
               component="img"
@@ -155,7 +155,7 @@ export function ItemCard({pokemon}){
       width: 300, height: '500px', margin: '10px', 
       backgroundColor: `${pokemon && colors[`${pokemon.types[0].type.name}`]}`,
       boxShadow: '10px 5px 5px silver',
-    }} className="hover">
+    }}>
       <CardMedia
         sx={{backgroundPosition: 'center', backgroundSize: 'cover', height: '300px'}}
         component="img"
@@ -164,7 +164,7 @@ export function ItemCard({pokemon}){
         alt="pokemon img"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div" style={{ textTransform: 'capitalize'}}>
+      <Typography gutterBottom variant="h5" component="div" style={{ textTransform: 'capitalize'}}>
           {pokemon && pokemon.name}
         </Typography>
        <Typography variant="body2" color="text.secondary">
@@ -224,15 +224,14 @@ export function BasicSelect({number, setNumber}) {
     setNumber({...number, number: event.target.value});
   };
   return (
-    <Box sx={{ minWidth: 120}} >
-      <FormControl fullWidth sx={{color: 'white'}}>
-        <InputLabel id="demo-simple-select-label" sx={{color: 'white'}}>Number</InputLabel>
+    <Box sx={{ minWidth: 120 }}>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Number</InputLabel>
         <Select
-          sx={{color: 'white', height: '50px'}}
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={number.number}
-          label="1"
+          label="Number"
           onChange={handleChange}
         >
           <MenuItem value={10}>Ten</MenuItem>
