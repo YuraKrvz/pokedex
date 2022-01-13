@@ -26,11 +26,11 @@ export default function PageHome() {
          setPages( {...pages, nextPage: res.next, prevPage: res.previous} );
          setList(res.results)
       })
-   }, [state.number]);
+   }, [state.number])
 
    useEffect(()=>{ 
       handlerFilterList(state.search, setList, list, currentPage) 
-   }, [state.search]);
+   }, [state.search])
 
    return (
       <>

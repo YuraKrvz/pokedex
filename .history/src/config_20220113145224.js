@@ -10,9 +10,10 @@ export const colors = {
    psychic: '#b0bec5',
    fairy: '#ffd180',
    fighting: '#ccff90',
+
 }
 
-export const handlerFilterList = (search, set, list, mainList) => {
+export const handlerFilterList = (search, set, mainList) => {
    if(search.length > 1){
       set( list.filter(pok => pok.name.includes(search)) )
    } else if (search.length < 1){

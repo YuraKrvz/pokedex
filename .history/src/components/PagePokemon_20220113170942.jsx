@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import {ContainerCustom, ItemCard} from './MaterialUiComponents';
 
 export default function PagePokemon() {

@@ -4,15 +4,21 @@ import {handlerFilterList} from '../config';
 
 export default function PageHome() {
    const [state, setState] = useState({number: 20, search: ''});
-   const [pages, setPages] = useState({nextPage: '', prevPage: ''})
+   const [pages, setPages] = useState({nextPage: [], prevPage: []})
+
 
    const [list, setList] = useState();
    const [currentPage, setCurrentPage] = useState();
 
+   const [nextPage, setNextPage] = useState();
+   const [prevPage, setPrevPage] = useState();
+
    const handlerPagination = async (variant) => {
-      const response = await fetch(variant === 'next' ? pages.nextPage : pages.prevPage).catch(console.error)
+      const response = await fetch(variant === 'next' ? nextPage : prevPage).catch(console.error)
       const res = await response.json();
-         setPages( {...pages, nextPage: res.next, prevPage: res.previous} );
+         setNextPage(res.next);
+         console.log(res.next)
+         setPrevPage(res.previous)
          setCurrentPage(res.results)
          setList(res.results);
    }
@@ -23,14 +29,15 @@ export default function PageHome() {
       .then(res => res.json())
       .then(res => {
          setCurrentPage(res.results);  
-         setPages( {...pages, nextPage: res.next, prevPage: res.previous} );
+         setNextPage(res.next);
+         setPrevPage(res.previous);
          setList(res.results)
       })
-   }, [state.number]);
+   }, [state.number])
 
    useEffect(()=>{ 
       handlerFilterList(state.search, setList, list, currentPage) 
-   }, [state.search]);
+   }, [state.search])
 
    return (
       <>

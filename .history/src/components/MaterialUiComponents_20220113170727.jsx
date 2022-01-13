@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {colors} from '../config';
 import { Link } from "react-router-dom";
+//Header
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -10,21 +11,39 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+// Media card
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
+//
 import Container from '@mui/material/Container';
+// 
 import Grid from '@mui/material/Grid';
+//FOOTER
+// import * as React from 'react';
+// import AppBar from '@mui/material/AppBar';
+// import Box from '@mui/material/Box';
+// import Toolbar from '@mui/material/Toolbar';
+// import Typography from '@mui/material/Typography';
+// import IconButton from '@mui/material/IconButton';
+// import MenuIcon from '@mui/icons-material/Menu';
+//BTN GROUP
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+// import * as React from 'react';
 import ButtonGroup from '@mui/material/ButtonGroup';
+// import Button from '@mui/material/Button';
+
+//FORM CONTROL
+// import * as React from 'react';
+// import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-//
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -67,7 +86,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
-// HEADER
+
 export function Header({search, setSearch, number, setNumber}) {
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -107,7 +126,7 @@ export function Header({search, setSearch, number, setNumber}) {
     </Box>
   );
 }
-// MediaCard
+//
 export function MediaCard({name, url}) {
   const [pokemon, setPokemon] = React.useState(null);
 
@@ -170,7 +189,9 @@ export function ItemCard({pokemon}){
   </Card>
   )
 }
-//  ContainerCustom
+
+// 
+
 export function ContainerCustom ({children}){
 
   return (
@@ -186,6 +207,7 @@ export function ContainerCustom ({children}){
   )
 }
 //FOOTER
+
 export function Footer({handler}) {
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -208,7 +230,7 @@ export function FooterBtns({handler}) {
   );
 }
 
-// BasicSelect, FORM CONTROL
+// FORM CONTROL
 export function BasicSelect({number, setNumber}) {
   const handleChange = (event) => {
     console.log(number)

@@ -1,6 +1,5 @@
 import * as React from 'react';
-import {colors} from '../config';
-import { Link } from "react-router-dom";
+//Header
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -10,21 +9,39 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+// Media card
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
+//
 import Container from '@mui/material/Container';
+// 
 import Grid from '@mui/material/Grid';
+//FOOTER
+// import * as React from 'react';
+// import AppBar from '@mui/material/AppBar';
+// import Box from '@mui/material/Box';
+// import Toolbar from '@mui/material/Toolbar';
+// import Typography from '@mui/material/Typography';
+// import IconButton from '@mui/material/IconButton';
+// import MenuIcon from '@mui/icons-material/Menu';
+//BTN GROUP
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+// import * as React from 'react';
 import ButtonGroup from '@mui/material/ButtonGroup';
+// import Button from '@mui/material/Button';
+
+//FORM CONTROL
+// import * as React from 'react';
+// import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-//
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -67,8 +84,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
-// HEADER
-export function Header({search, setSearch, number, setNumber}) {
+
+export function Header({search, setSearch, }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -90,14 +107,14 @@ export function Header({search, setSearch, number, setNumber}) {
           >
             Pokedex
           </Typography>
-          <BasicSelect number={number} setNumber={setNumber} />
+          <BasicSelect />
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              value={ search.search }
-              onChange={ e => setSearch({...search, search: e.target.value}) }
+              value={ search }
+              onChange={ e => setSearch(e.target.value) }
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
@@ -107,71 +124,37 @@ export function Header({search, setSearch, number, setNumber}) {
     </Box>
   );
 }
-// MediaCard
-export function MediaCard({name, url}) {
-  const [pokemon, setPokemon] = React.useState(null);
+//
 
-  React.useEffect(()=>{
-     fetch(url)
-     .then(res=>res.json())
-     .then(res => {
-        setPokemon(res)
-     })
-  }, [])
-
+export default function MediaCard() {
   return (
-     <Link to={`${name}`} >
-        <Card sx={{ maxWidth: 245, margin: '10px', backgroundColor: `${pokemon && colors[`${pokemon.types[0].type.name}`]}` }}>
-           <CardMedia
-              component="img"
-              height="120"
-              image={pokemon && pokemon.sprites['front_default']}
-              alt="pokemon img"
-           />
-           <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                 {name}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                 Abilities: {pokemon && pokemon.abilities.map(a => a.ability.name + ', ')}
-                 <br />
-                 Base experience: {pokemon && pokemon.base_experience}
-              </Typography>
-           </CardContent>
-        </Card>
-     </Link>
-  );
-}
-
-//ITEM Card
-export function ItemCard({pokemon}){
-  return(
-    <Card sx={{ maxWidth: 345, margin: '10px', backgroundColor: `${pokemon && colors[`${pokemon.types[0].type.name}`]}` }}>
+    <Card sx={{ maxWidth: 245, margin: '10px' }}>
       <CardMedia
         component="img"
-        height="140"
-        image={`${pokemon && pokemon.sprites['front_default']}`}
-        alt="img pokemon"
+        height="120"
+        image="/static/images/cards/contemplative-reptile.jpg"
+        alt="green iguana"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {pokemon && pokemon.name}
+          Lizard
         </Typography>
-       <Typography variant="body2" color="text.secondary">
-        Abilities: {pokemon && pokemon.abilities.map(a => a.ability.name + ', ')}
-        Base experience: {pokemon && pokemon.base_experience}
-       </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Lizards are a widespread group of squamate reptiles, with over 6,000
+          species, ranging across all continents except Antarctica
+        </Typography>
       </CardContent>
       <CardActions>
-       <Link to="/"> 
-        <Button size="small"> Back </Button> 
-       </Link>
+        <Button variant="contained" size="small">Share</Button>
+        <Button variant="contained" size="small">Learn More</Button>
       </CardActions>
-  </Card>
-  )
+    </Card>
+  );
 }
-//  ContainerCustom
-export function ContainerCustom ({children}){
+
+// 
+
+export function MainFeed ({children}){
 
   return (
     <Container>
@@ -186,6 +169,7 @@ export function ContainerCustom ({children}){
   )
 }
 //FOOTER
+
 export function Footer({handler}) {
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -208,21 +192,19 @@ export function FooterBtns({handler}) {
   );
 }
 
-// BasicSelect, FORM CONTROL
+// FORM CONTROL
 export function BasicSelect({number, setNumber}) {
   const handleChange = (event) => {
-    console.log(number)
-    setNumber({...number, number: event.target.value});
-    console.log(number)
+    setNumber(event.target.value);
   };
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Number</InputLabel>
+        <InputLabel id="demo-simple-select-label">Age</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={number.number}
+          value={number}
           label="Number"
           onChange={handleChange}
         >

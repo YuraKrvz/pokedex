@@ -30,7 +30,7 @@ export default function PageHome() {
 
    useEffect(()=>{ 
       handlerFilterList(state.search, setList, list, currentPage) 
-   }, [state.search]);
+   }, [state.search])
 
    return (
       <>

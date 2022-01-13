@@ -10,6 +10,7 @@ export const colors = {
    psychic: '#b0bec5',
    fairy: '#ffd180',
    fighting: '#ccff90',
+
 }
 
 export const handlerFilterList = (search, set, list, mainList) => {
