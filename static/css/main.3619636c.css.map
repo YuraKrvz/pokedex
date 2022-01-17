@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.3619636c.css","mappings":"AAAA,EAGE,qBAAsB,CAFtB,QAAS,CACT,SAEF,CACA,KACE,wBACF,CAEA,aACE,gCACF","sources":["index.css"],"sourcesContent":["* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\nbody{\n  background-color: #eceff1;\n}\n\n.hover:hover{\n  box-shadow: 15px 10px 10px silver;\n}"],"names":[],"sourceRoot":""}
