@@ -1,0 +1,12 @@
+import "~slick-carousel/slick/slick.css"; 
+import "~slick-carousel/slick/slick-theme.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hover:hover{
+  box-shadow: 15px 10px 10px silver;
+}

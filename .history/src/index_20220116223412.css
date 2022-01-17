@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #bbdefb;
+}
+
+.hover:hover{
+  box-shadow: 15px 10px 10px silver;
+}

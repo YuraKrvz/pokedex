@@ -5,6 +5,7 @@ import {ContainerCustom, ItemCard} from './MaterialUiComponents';
 export default function PagePokemon() {
    const [pokemon, setPokemon] = React.useState();
    const params = useParams();
+   console.log(params)
 
    React.useEffect(()=>{
       fetch(`https://pokeapi.co/api/v2/pokemon/${params.pokemon}`)
